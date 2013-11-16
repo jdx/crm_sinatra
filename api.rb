@@ -11,14 +11,14 @@ else
   mongo = Mongo::MongoClient.new().db('crm')
 end
 
-customers = mongo.collection("customers")
+collection = mongo.collection("customers")
 
 get '/' do
   "CRM Sinatra"
 end
 
 get '/api/v1/customers.json' do
-  customers = customers.find().map do |c|
+  customers = collection.find().map do |c|
     {
       id: c["_id"].to_s,
       name: c["name"],
