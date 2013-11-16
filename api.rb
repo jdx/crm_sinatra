@@ -17,6 +17,10 @@ get '/' do
   "CRM Sinatra"
 end
 
+get '/mu-14700fa0-c283368a-02ee6b23-dca88bcf' do
+  '42'
+end
+
 get '/api/v1/customers.json' do
   customers = customers.find().map do |c|
     {
